@@ -1,0 +1,221 @@
+/* Core structure configurations */
+:host {
+  display: block;
+  width: 100%;
+}
+
+.linkedin-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #EAEAEA;
+  box-shadow: 0 1px 0px rgba(0, 0, 0, 0.03);
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  
+  
+  /* Layout Position Anchor System Shifts */
+  position: fixed;        /* Lock navigation strictly to the viewport frame */
+  top: 0;                 /* Align to absolute top surface border */
+  left: 0;                /* Span cleanly from left window wall */
+  right: 0;               /* Stretch perfectly across to right edge */
+  height: 52px;           /* Fixed functional depth metric */
+  z-index: 1000;          /* Elevate viewport layout above dynamic scroll assets */
+    /* Layout Position Anchor System Shifts 
+  height: 52px;
+  position: fixed;
+  top: 0;
+  zIndex: 100; */
+}
+
+.header-container {
+  max-width: 1128px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+/* Brand and Search Section */
+.left-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.brand-icon-logo {
+  background-color: #0A66C2;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 21px;
+  width: 34px;
+  height: 34px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -1px;
+  padding-bottom: 4px;
+  user-select: none;
+}
+
+.search-wrapper {
+  position: relative;
+  width: 280px;
+}
+
+.search-input-field {
+  width: 100%;
+  background-color: #EDF3F8;
+  border: none;
+  border-radius: 4px;
+  height: 34px;
+  padding: 0 8px 0 36px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.9);
+  line-height: 1.5;
+  outline: none;
+  transition: background-color 0.15s ease;
+}
+
+.search-input-field::placeholder {
+  color: #666666;
+}
+
+.search-input-field:focus {
+  background-color: #ffffff;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.6);
+}
+
+.glass-icon-anchor {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666666;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+/* Right Navigation Elements */
+.right-nav-group {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.primary-links-shelf {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  border-right: 1px solid #EAEAEA;
+  padding-right: 4px;
+}
+
+.premium-links-shelf {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-left: 4px;
+}
+
+/* Nav Button Specifics */
+.nav-item-btn {
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-col: column;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 52px;
+  color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.15s ease;
+}
+
+.nav-item-btn:hover {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.nav-item-btn.active-state {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+/* Active Highlight Indicator Bar */
+.nav-item-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.9);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.nav-item-btn:hover::after,
+.nav-item-btn.active-state::after {
+  transform: scaleX(1);
+}
+
+/* Badge Alert Styling */
+.badge-node {
+  position: absolute;
+  top: -4px;
+  right: -5px;
+  background-color: #CC1016;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+  box-shadow: 0 0 0 2px #ffffff;
+}
+
+.icon-canvas-box {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-canvas-box svg {
+  width: 24px;
+  height: 24px;
+}
+
+.label-text-node {
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 2px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.arrow-down-icon {
+  margin-left: 2px;
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+}
+
+/* Profile specific styles */
+.profile-avatar-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}

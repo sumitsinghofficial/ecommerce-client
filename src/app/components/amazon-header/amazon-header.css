@@ -1,0 +1,282 @@
+/* --- Global Reset & Fonts --- */
+:host {
+  display: block;
+  width: 100%;
+  font-family: "Amazon Ember", Arial, sans-serif;
+  box-sizing: border-box;
+  --amazon-dark: #131921;
+  --amazon-amber: #febd69;
+  --amazon-amber-hover: #f3a847;
+  --amazon-blue: #00a8e1;
+}
+
+/* --- Container Frame --- */
+.nav-header {
+  background-color: var(--amazon-dark);
+  color: #ffffff;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  font-size: 14px;
+  user-select: none;
+}
+
+/* --- Navigation Interactive Boxes --- */
+.nav-box {
+  border: 1px solid transparent;
+  border-radius: 2px;
+  padding: 4px 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 42px;
+  transition: border-color 0.1s linear;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-box:hover {
+  border-color: #ffffff;
+}
+
+/* --- Left Branding Group --- */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4px;
+}
+
+.logo-main {
+  display: flex;
+  align-items: baseline;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.logo-tld {
+  font-size: 12px;
+  color: var(--amazon-amber);
+  font-weight: 500;
+}
+
+.logo-prime {
+  font-size: 10px;
+  color: var(--amazon-blue);
+  font-weight: 700;
+  margin-top: -4px;
+  align-self: flex-end;
+  line-height: 1;
+}
+
+.location-container {
+  display: flex;
+  align-items: center;
+}
+
+.location-icon-wrapper {
+  margin-right: 4px;
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  padding-bottom: 2px;
+}
+
+.location-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.line-1-light {
+  font-size: 12px;
+  color: #cccccc;
+  font-weight: 300;
+}
+
+.line-2-bold {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+/* --- Center Search Bar Group --- */
+.nav-fill {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin: 0 16px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #ffffff;
+  transition: box-shadow 0.1s ease;
+}
+
+/* Replicates Amazon's distinct orange border outline glow upon focal click */
+.nav-fill:focus-within {
+  box-shadow: 0 0 0 2px var(--amazon-amber-hover);
+}
+
+.search-dropdown {
+  position: relative;
+  background-color: #f3f3f3;
+  color: #555555;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 28px 0 12px;
+  font-size: 12px;
+  border-right: 1px solid #dddddd;
+  cursor: pointer;
+}
+
+.search-dropdown:hover {
+  background-color: #dadada;
+  color: #111111;
+}
+
+.search-dropdown select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.dropdown-arrow {
+  position: absolute;
+  right: 10px;
+  font-size: 8px;
+  pointer-events: none;
+  color: #666666;
+}
+
+.search-input {
+  width: 100%;
+  height: 100%;
+  padding: 0 12px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  color: #111111;
+}
+
+.search-submit-btn {
+  background-color: var(--amazon-amber);
+  border: none;
+  height: 100%;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+}
+
+.search-submit-btn:hover {
+  background-color: var(--amazon-amber-hover);
+}
+
+.search-submit-btn svg {
+  color: #111111;
+  width: 22px;
+  height: 22px;
+}
+
+/* --- Right Utility Links Group --- */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Language Switcher Flag Structure */
+.flag-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 18px;
+  height: 12px;
+}
+
+.flag-orange { background-color: #FF9933; height: 33.3%; }
+.flag-white  { 
+  background-color: #ffffff; 
+  height: 33.3%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+.flag-wheel  { background-color: #000080; border-radius: 50%; width: 2px; height: 2px; }
+.flag-green  { background-color: #128807; height: 33.3%; }
+
+.lang-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.inline-arrow {
+  font-size: 7px;
+  color: #a7a7a7;
+  align-self: flex-end;
+  margin-bottom: 2px;
+}
+
+.account-container {
+  display: flex;
+  align-items: center;
+}
+
+.lowercase-name {
+  text-transform: lowercase;
+}
+
+/* Cart Icon Counter Logic Placement */
+.cart-box {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.cart-icon-container {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.cart-count {
+  position: absolute;
+  left: 12px;
+  top: -8px;
+  color: #f08804;
+  font-size: 16px;
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+}
+
+.cart-box svg {
+  width: 38px;
+  height: 38px;
+}
+
+.cart-title {
+  margin-left: 2px;
+  margin-bottom: 2px;
+}

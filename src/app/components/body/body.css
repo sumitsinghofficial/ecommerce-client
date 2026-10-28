@@ -1,0 +1,343 @@
+:host {
+  display: block;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: #f4f6f8;
+  color: #1a1a1a;
+  min-height: 80vh;
+}
+
+.main-layout {
+  width: 100%;
+  padding-bottom: 60px;
+}
+
+/* Base Wrapper for Grid Alignment */
+.content-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.view-all {
+  color: #007185;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.view-all:hover {
+  text-decoration: underline;
+  color: #c45500;
+}
+
+/* 1. Hero Banner Component Styles */
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  background-color: #232f3e;
+  overflow: hidden;
+}
+
+.banner-slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.banner-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  color: #ffffff;
+  max-width: 500px;
+  z-index: 2;
+}
+
+.banner-overlay h1 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.banner-overlay p {
+  font-size: 18px;
+  margin-bottom: 24px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.cta-button {
+  background-color: #ffd814;
+  color: #0f1111;
+  border: none;
+  padding: 12px 30px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  transition: background-color 0.2s;
+}
+
+.cta-button:hover {
+  background-color: #f7ca00;
+}
+
+.slide-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 16px 12px;
+  cursor: pointer;
+  z-index: 3;
+  transition: background 0.2s;
+}
+
+.slide-control:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.slide-control.prev { left: 10px; border-radius: 0 4px 4px 0; }
+.slide-control.next { right: 10px; border-radius: 4px 0 0 4px; }
+
+
+/* 2. Categories Rows Layout */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.category-card {
+  background: white;
+  padding: 24px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+.category-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background-color: #eef2f4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px auto;
+}
+
+.category-icon {
+  font-size: 28px;
+}
+
+.category-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+
+/* 3. Product Cards Grid System */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.product-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #cc0c39;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 3px;
+  z-index: 2;
+}
+
+.product-image {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.wishlist-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.product-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-brand {
+  font-size: 12px;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.product-title {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0 0 8px 0;
+  color: #1a1a1a;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 42px;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.stars {
+  color: #ffa41c;
+  font-size: 14px;
+}
+
+.reviews-count {
+  font-size: 12px;
+  color: #007185;
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.price-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.current-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.old-price {
+  font-size: 13px;
+  color: #718096;
+  text-decoration: line-through;
+}
+
+.add-to-cart-btn {
+  background-color: #ffd814;
+  border: 1px solid #fcd200;
+  border-radius: 4px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #f7ca00;
+}
+
+
+/* Responsive Adaptations */
+@media (max-width: 1024px) {
+  .hero-banner { height: 350px; }
+  .banner-overlay h1 { font-size: 32px; }
+}
+
+@media (max-width: 768px) {
+  .hero-banner { height: 280px; }
+  .banner-overlay { left: 5%; right: 5%; }
+  .banner-overlay h1 { font-size: 26px; }
+  .banner-overlay p { font-size: 15px; }
+  .products-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+}

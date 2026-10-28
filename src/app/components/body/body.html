@@ -1,0 +1,84 @@
+<main class="main-layout">
+  
+  <!-- Hero Banner Carousel / Slider -->
+  <section class="hero-banner">
+    <div class="banner-slide">
+      <img [src]="heroBanners[currentBannerIndex].image" [alt]="heroBanners[currentBannerIndex].title">
+      <div class="banner-overlay">
+        <h1>{{ heroBanners[currentBannerIndex].title }}</h1>
+        <p>{{ heroBanners[currentBannerIndex].subtitle }}</p>
+        <button class="cta-button" (click)="onCtaClick(heroBanners[currentBannerIndex].link)">
+          Shop Now
+        </button>
+      </div>
+    </div>
+    <!-- Carousel Controls -->
+    <button class="slide-control prev" (click)="prevBanner()">❮</button>
+    <button class="slide-control next" (click)="nextBanner()">❯</button>
+  </section>
+
+  <!-- Quick Categories Row -->
+  <section class="content-container categories-section">
+    <div class="section-header">
+      <h2>Shop by Category</h2>
+    </div>
+    <div class="categories-grid">
+      <div class="category-card" *ngFor="let category of categories" (click)="navigateToCategory(category.id)">
+        <div class="category-icon-wrapper">
+          <span class="category-icon">{{ category.icon }}</span>
+        </div>
+        <h3>{{ category.name }}</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products Grid -->
+  <section class="content-container products-section">
+    <div class="section-header">
+      <h2>Trending Products</h2>
+      <a href="/products" class="view-all">View All Products ➔</a>
+    </div>
+    
+    <div class="products-grid">
+      <div class="product-card" *ngFor="let product of featuredProducts">
+        <!-- Badge -->
+        <span class="product-badge" *ngIf="product.badge">{{ product.badge }}</span>
+        
+        <!-- Image Area -->
+        <div class="product-image">
+          <img [src]="product.image" [alt]="product.title">
+          <button class="wishlist-btn" (click)="toggleWishlist(product.id, $event)">
+            ❤️
+          </button>
+        </div>
+
+        <!-- Info Area -->
+        <div class="product-info">
+          <span class="product-brand">{{ product.brand }}</span>
+          <h3 class="product-title">{{ product.title }}</h3>
+          
+          <!-- Rating -->
+          <div class="product-rating">
+            <span class="stars">★ ★ ★ ★ ☆</span>
+            <span class="reviews-count">({{ product.reviews }})</span>
+          </div>
+
+          <!-- Price & Action Row -->
+           <div class="product-footer">
+            <div class="price-container">
+              <span class="current-price">{{ product.price | currency:'USD':'symbol':'1.2-2' }}</span>
+              <span class="old-price" *ngIf="product.oldPrice">
+                {{ product.oldPrice | currency:'USD':'symbol':'1.2-2' }}
+              </span>
+            </div>
+            <button class="add-to-cart-btn" (click)="addToCart(product, $event)">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+

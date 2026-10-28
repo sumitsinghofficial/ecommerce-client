@@ -1,0 +1,92 @@
+<header class="nav-header">
+  
+  <!-- Left Side: Brand Logo and Location Setup -->
+  <div class="nav-left">
+    <a href="#" class="nav-box logo-container">
+      <div class="logo-main">
+        <span class="logo-text">amazon</span>
+        <span class="logo-tld">.in</span>
+      </div>
+      <span class="logo-prime">prime</span>
+    </a>
+
+    <div class="nav-box location-container">
+      <div class="location-icon-wrapper">
+        <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      </div>
+      <div class="location-text">
+        <span class="line-1-light">Deliver to {{ userName }}</span>
+        <span class="line-2-bold">{{ deliveryLocation }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Central Contextual Search Interface -->
+  <div class="nav-fill">
+    <div class="search-dropdown">
+      <span>All</span>
+      <span class="dropdown-arrow">▼</span>
+      <select>
+        <option *ngFor="let category of categories">{{ category }}</option>
+      </select>
+    </div>
+    
+    <input 
+      type="text" 
+      class="search-input" 
+      [placeholder]="'Search Amazon.in'" 
+      [(ngModel)]="searchQuery"
+    />
+    
+    <button class="search-submit-btn" (click)="onSearch()">
+      <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Right Side: Profile Settings & Checkout Link Hub -->
+  <div class="nav-right">
+    
+    <!-- Language Flag Indicator -->
+    <div class="nav-box lang-container">
+      <div class="flag-wrapper">
+        <div class="flag-orange"></div>
+        <div class="flag-white"><div class="flag-wheel"></div></div>
+        <div class="flag-green"></div>
+      </div>
+      <span class="line-2-bold">EN</span>
+      <span class="inline-arrow">▼</span>
+    </div>
+
+    <!-- Account Details Dropdown link -->
+    <div class="nav-box">
+      <span class="line-1-light">Hello, <span class="lowercase-name">{{ userName }}</span></span>
+      <div class="account-container">
+        <span class="line-2-bold">Account & Lists</span>
+        <span class="inline-arrow" style="margin-left: 4px;">▼</span>
+      </div>
+    </div>
+
+    <!-- Tracking -->
+    <div class="nav-box">
+      <span class="line-1-light">Returns</span>
+      <span class="line-2-bold">& Orders</span>
+    </div>
+
+    <!-- Cart Basket Summary Display -->
+    <div class="nav-box cart-box">
+      <div class="cart-icon-container">
+        <span class="cart-count">{{ cartCount }}</span>
+        <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      </div>
+      <span class="line-2-bold cart-title">Cart</span>
+    </div>
+
+  </div>
+</header>
